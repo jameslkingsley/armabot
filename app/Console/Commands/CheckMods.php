@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Queries\CUP;
 use App\Queries\GitHub;
 use Illuminate\Console\Command;
 
@@ -38,6 +39,8 @@ class CheckMods extends Command
      */
     public function handle()
     {
+        (new CUP)->handle();
+
         foreach (config('mods.github') as $name => $mod) {
             (new GitHub)->handle($name, (object) $mod);
         }
