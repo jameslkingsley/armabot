@@ -1,0 +1,59 @@
+.btn {
+    @apply .bg-white .text-grey .font-semibold .shadow-button .py-2 .px-3 .rounded .text-xs .no-underline .uppercase;
+    transition: all .2s ease;
+
+    &.btn-hero {
+        @apply .normal-case .rounded-full;
+    }
+
+    &:hover {
+        @apply .shadow-button-hover;
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        @apply .shadow-button-active;
+    }
+
+    &[disabled], &.disabled {
+        @apply .opacity-50 .shadow-none .cursor-default;
+
+        &:hover {
+            @apply .shadow-none;
+            transform: translateY(0);
+        }
+    }
+
+    &.btn-flat {
+        box-shadow: none !important;
+    }
+
+    &.btn-sm {
+        @apply .p-1;
+    }
+
+    &.btn-xs {
+        padding: 0.33rem 0.66rem;
+    }
+
+    &.btn-lg {
+        @apply .py-3 .px-6 .text-sm;
+    }
+
+    &.btn-xl {
+        @apply .py-4 .px-8 .text-base;
+    }
+
+    &.btn-primary {
+        @apply .bg-brand .text-white;
+
+        &:active {
+            @apply .bg-brand-dark;
+        }
+    }
+
+    .material-icons {
+        @apply .float-left .h-full;
+        font-size: 16px;
+    }
+}

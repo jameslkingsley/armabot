@@ -1,0 +1,65 @@
+a, button {
+    outline: 0 !important;
+}
+
+svg {
+    color: inherit;
+    fill: currentColor;
+
+    * {
+        color: inherit;
+        fill: currentColor;
+    }
+}
+
+html, body {
+    @apply .font-sans .text-base .text-grey .bg-body .h-full .leading-normal;
+
+    header, nav {
+        color: inherit;
+
+        a {
+            color: inherit;
+
+            &:hover, &:focus, &:active {
+                color: inherit;
+            }
+        }
+    }
+
+    main {
+        height: calc(100% - 64px);
+    }
+}
+
+body {
+    overflow-y: scroll;
+}
+
+button {
+    @apply .text-grey;
+}
+
+a {
+    color: inherit;
+    @apply .no-underline;
+
+    &:not(.underline) {
+        &:hover, &:focus, &:active {
+            color: inherit;
+            @apply .no-underline;
+        }
+    }
+}
+
+p {
+    @apply .mb-6 .leading-normal .font-normal;
+    
+    &:last-of-type {
+        @apply .mb-0;
+    }
+}
+
+.transition {
+    transition: all .15s ease;
+}
