@@ -6,12 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ config('app.name') }}</title>
-        <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
+        <link rel="stylesheet" href="{{ url('/css/app.css') }}">
     </head>
 
     <body class="bg-black-darkest h-screen font-sans leading-normal text-xl text-white font-medium">
         <div id="app" v-cloak></div>
 
-        <script type="text/javascript" src="{{ mix('/js/app.js') }}"></script>
+        <script type="text/javascript" src="{{ url('/js/app.js') }}"></script>
     </body>
 </html>
