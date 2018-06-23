@@ -47,8 +47,9 @@ class ModUpdated extends Notification
      */
     public function toDiscord($notifiable)
     {
+        $webmasterId = config('services.discord.webmaster');
         $version = $this->mod->version ? " ({$this->mod->version})" : '';
 
-        return DiscordMessage::create("**{$this->mod->name}** has released a new version{$version}\n{$this->mod->url}");
+        return DiscordMessage::create("<@$webmasterId> **{$this->mod->name}** has released a new version{$version}\n{$this->mod->url}");
     }
 }
