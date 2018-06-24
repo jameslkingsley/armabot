@@ -12,7 +12,7 @@ class Message extends Command
      *
      * @var string
      */
-    protected $signature = 'send {message}';
+    protected $signature = 'send {message} {--channel=}';
 
     /**
      * The console command description.
@@ -28,7 +28,7 @@ class Message extends Command
      */
     public function handle(Discord $discord)
     {
-        $discord->send(config('services.discord.channel_id'), [
+        $discord->send($this->option('channel'), [
             'content' => $this->argument('message'),
             'embed' => null,
         ]);
