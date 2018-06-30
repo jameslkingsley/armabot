@@ -12,7 +12,7 @@ class Message extends Command
      *
      * @var string
      */
-    protected $signature = 'send {message} {--channel=}';
+    protected $signature = 'send {message} {--channel=240160552867987475}';
 
     /**
      * The console command description.
