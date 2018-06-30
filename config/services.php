@@ -38,5 +38,6 @@ return [
         'token' => env('DISCORD_API_TOKEN'),
         'channel_id' => env('DISCORD_CHANNEL_ID'),
         'webmaster' => env('DISCORD_WEBMASTER'),
+        'default_channel' => env('DISCORD_DEFAULT_CHANNEL'),
     ],
 ];
