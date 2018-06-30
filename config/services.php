@@ -36,6 +36,7 @@ return [
 
     'discord' => [
         'token' => env('DISCORD_API_TOKEN'),
+        'server_id' => env('DISCORD_SERVER_ID'),
         'channel_id' => env('DISCORD_CHANNEL_ID'),
         'webmaster' => env('DISCORD_WEBMASTER'),
         'default_channel' => env('DISCORD_DEFAULT_CHANNEL'),
