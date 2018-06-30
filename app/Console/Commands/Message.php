@@ -28,7 +28,9 @@ class Message extends Command
      */
     public function handle(Discord $discord)
     {
-        $discord->send($this->option('channel'), [
+        $channel = $this->option('channel') ?: config('services.discord.default_channel');
+
+        $discord->send($channel, [
             'content' => $this->argument('message'),
             'embed' => null,
         ]);
