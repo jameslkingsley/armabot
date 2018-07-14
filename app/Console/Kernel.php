@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use Carbon\Carbon;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -27,6 +28,15 @@ class Kernel extends ConsoleKernel
         $schedule->command('check-mods')->hourly();
         $schedule->command('attendance-reminder')->hourly();
         $schedule->command('recruitment-reminder')->hourly();
+
+        $schedule->command('generate-recruitment-post')->dailyAt('18:00')->when(function () {
+            return in_array(now()->dayOfWeek, [
+                Carbon::SATURDAY,
+                Carbon::MONDAY,
+                Carbon::WEDNESDAY,
+                Carbon::FRIDAY
+            ]);
+        });
     }
 
     /**
