@@ -40,5 +40,6 @@ return [
         'channel_id' => env('DISCORD_CHANNEL_ID'),
         'webmaster' => env('DISCORD_WEBMASTER'),
         'default_channel' => env('DISCORD_DEFAULT_CHANNEL'),
+        'media_channel' => env('DISCORD_MEDIA_CHANNEL'),
     ],
 ];
