@@ -27,9 +27,8 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('check-mods')->hourly();
         $schedule->command('attendance-reminder')->hourly();
-        $schedule->command('recruitment-reminder')->hourly();
 
-        $schedule->command('generate-recruitment-post')->dailyAt('18:00')->when(function () {
+        $schedule->command('recruitment-reminder')->dailyAt('18:00')->when(function () {
             return in_array(now()->dayOfWeek, [
                 Carbon::MONDAY,
                 Carbon::WEDNESDAY,
