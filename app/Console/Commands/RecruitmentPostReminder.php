@@ -101,7 +101,7 @@ The goal of the our community is to engage players in an experience that only Ar
         $messages = collect(
             $this->discord->channel->getChannelMessages([
                 'limit' => 100,
-                'channel.id' => config('services.discord.media_channel'),
+                'channel.id' => (int) config('services.discord.media_channel'),
             ])
         )->map(function ($message) {
             return new Message($message);
