@@ -58,7 +58,7 @@ class RecruitmentPostReminder extends Command
             }
         }
 
-        $videoLinksText = implode(' | ', $videoLinks);
+        $videoLinksText = implode(' &nbsp;&middot;&nbsp; ', $videoLinks);
         $userToMention = config('services.discord.webmaster');
 
         $discord->send(config('services.discord.channel_id'), [
@@ -66,26 +66,37 @@ class RecruitmentPostReminder extends Command
             'content' => "
 <@{$userToMention}> Post recruitment on https://www.reddit.com/r/FindAUnit\n
 ```
-[A3][Recruiting][EU/US] ARCOMM - FPP, No Scopes, COOPs & PvPs
+[A3][Recruiting][EU/US] ARCOMM - Casual Community, Serious Arma
 
-# About [ARCOMM](https://arcomm.co.uk/)
-The goal of the our community is to engage players in an experience that only Arma can provide. We utilize conventional tactics as many other communities do, but we do so without the added fluff. We don’t do internet obstacle courses. There are **no ranks or saluting**; however, we do expect our members to be level-headed when it comes to our in-game attitude. Our community is international with suitable times for the American and EU time zones every **Saturday at 17:00 UTC (Zulu)** consisting of **1 PVP and 2 CO-OPs** which can take up to 5 hours to complete.
+We are a welcoming community of like-minded gamers, established in 2015. We utilize conventional tactics, but we do so without the added fluff - we don’t do ranks or saluting - however, we do expect our members to be level-headed when it comes to our in-game attitude.
 
-## Quick Rundown
-- No respawns
-- No magnified infantry optics
-- Must be at least 18 years old
-- Forced first person only
-- Average of 25 players per week and growing
-- Community runs on Discord, TeamSpeak and ARCHUB
-- Base mods include ACE, ACRE, CUP, NIArms and various in-house mods
-- Apex DLC is required
-- No mandatory training after orientation
-- Numerous other games played such as Rainbow Six Siege, PUBG, Squad and more!
+##### Community
+* We play numerous other games such as Siege, DCS, Squad etc
+* Community runs on Discord, TeamSpeak, and ARCHUB
+* Apex DLC required
+* Must be at least 18
+* Welcoming of newcomers to Arma
 
-## Latest Videos: {$videoLinksText}
+##### Gameplay
+* No respawns
+* No magnified infantry optics
+* First person perspective
+* Base mods include ACE, ACRE, CUP, NIArms
+* Average of 25 players per session
 
-# Want to find out more? Check us out at https://arcomm.co.uk
+##### Schedule
+* Every Saturday at 17:00 UTC (Zulu)
+* Usually consists of 1 PVP and 2 CO-OPs
+* Session can take up to 4 hours to complete
+* Monthly group meetings
+
+-
+
+**Latest Videos:** {$videoLinksText}
+
+-
+
+**Want to find out more? Check us out at [https://arcomm.co.uk](https://arcomm.co.uk)**
 ```
             "
         ]);
