@@ -29,7 +29,7 @@ class AttendanceReminder extends Command
      */
     public function handle(Discord $discord)
     {
-        if (now()->dayOfWeek === Carbon::SATURDAY && now()->hour >= 17 && now()->hour <= 22) {
+        if (now()->dayOfWeek === Carbon::SATURDAY && now()->hour >= 17 && now()->hour <= 21) {
             $discord->send(config('services.discord.channel_id'), [
                 'content' => '<@' . config('services.discord.webmaster') . '> Collect attendance!',
                 'embed' => null,
